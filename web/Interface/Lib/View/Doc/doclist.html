@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<table border="1">
+    <tr><th>名称</th><th>描述</th></tr>
+    <volist name="controllers" id="vo" key="k">
+        <tr><td><a href="?m=Doc&a=actionlist&controller={$vo->getName()}">{$vo->getName()}</a></td><td>{$vo->getDocCommentHtml()}</td></tr>
+
+
+
+    </volist>
+
+</table>
+<ul>
+
+</ul>
+</body>
+</html>

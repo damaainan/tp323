@@ -1,0 +1,121 @@
+[ 2016-06-28T18:37:53+08:00 ] ::1 /aws/web/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Home\Behavior\CheckBehavior [ RunTime:0.020001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.039003s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.039003s ]
+NOTIC: [8] Undefined variable: result D:\wamp\www\aws\web\Runtime\Cache\Home\a67186ba50fdb030aaa95e12cc1b51b5.php 第 10 行.
+NOTIC: [8] Undefined variable: page D:\wamp\www\aws\web\Runtime\Cache\Home\a67186ba50fdb030aaa95e12cc1b51b5.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.011001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-06-28T18:37:54+08:00 ] ::1 /aws/web/index.php/Home/Game/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Home\Behavior\CheckBehavior [ RunTime:0.004000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-06-28T18:38:02+08:00 ] ::1 /aws/web/index.php/Home/Hjlist/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Home\Behavior\CheckBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of Home\Model\HjlistModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) D:\wamp\www\aws\web\Blog\Home\Model\HjlistModel.class.php 第 4 行.
+NOTIC: [2048] Declaration of Home\Model\HjlistModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp\www\aws\web\Blog\Home\Model\HjlistModel.class.php 第 4 行.
+ERR: 1146:Table 'wish.wish_hjlist' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wish_hjlist`
+ERR: 1146:Table 'wish.wish_hjlist' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wish_hjlist`
+
+[ 2016-06-28T18:39:01+08:00 ] ::1 /aws/web/index.php/Home/Hjlist/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Home\Behavior\CheckBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2048] Declaration of Home\Model\HjlistModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) D:\wamp\www\aws\web\Blog\Home\Model\HjlistModel.class.php 第 4 行.
+NOTIC: [2048] Declaration of Home\Model\HjlistModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp\www\aws\web\Blog\Home\Model\HjlistModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `tpf_hjlist` [ RunTime:0.1120s ]
+SQL: SELECT * FROM `tpf_hjlist` LIMIT 0,10   [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tpf_hjlist` LIMIT 1   [ RunTime:0.0110s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-06-28T18:39:06+08:00 ] ::1 /aws/web/index.php/Home/Hjlist/index/p/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Home\Behavior\CheckBehavior [ RunTime:0.003001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [2048] Declaration of Home\Model\HjlistModel::add() should be compatible with Think\Model::add($data = '', $options = Array, $replace = false) D:\wamp\www\aws\web\Blog\Home\Model\HjlistModel.class.php 第 4 行.
+NOTIC: [2048] Declaration of Home\Model\HjlistModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp\www\aws\web\Blog\Home\Model\HjlistModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `tpf_hjlist` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `tpf_hjlist` LIMIT 100,10   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tpf_hjlist` LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        td div{width: 200px;height: 20px; overflow: hidden; table-layout:fixed}
+        .tdsuccess{color: #009966;}
+        .tderror{color: #a61717;}
+        *{font-size: 12px;}
+    </style>
+</head>
+<body>
+
+<input type="button" value="测试全部" onclick="testAll()">
+<input type="button" value="停止" onclick="stopAll()">
+<table border="1">
+    <tr><th>class名称</th><th>action名称</th><th>描述</th><th>method</th><th>测试用例</th><th>计划结果包含</th><th>状态</th><th>实际结果</th></tr>
+    <volist name="demoforms" id="vo" key="k">
+
+
+
+                <?php
+                    foreach($vo->tests as $testItem){
+
+                        echo "<tr class=\"testItem\" formMethod=\"".$vo->getFormMethod()."\" actionName=\"".$vo->method->name."\" className=\"".$vo->method->class."\" >
+        <td class=\"tdclassname\">".$vo->class."</td>
+        <td class=\"tdname\">".$vo->name."</td>
+        <td class=\"tdinfo\">".$vo->info."</td>
+        <td class=\"tdmethod\">-</td>
+        <td class=\"tdparams\">".$testItem->params."</td>
+        <td class=\"tdtestresult\">".$testItem->result."</td>
+        <td class=\"tdstatus\">-</td>
+        <td class=\"tdResult\" onclick=\"alert(this.innerHTML)\">-</td>
+        </tr>";
+                    }
+
+                ?>
+
+
+
+
+
+
+    </volist>
+
+</table>
+
+<ul>
+
+</ul>
+<script src="http://dongman.ifenghui.com/Public/js/jquery.js"></script>
+<script>
+    var str='{"status":1,"msg":"success"}';
+
+function testAll(){
+    isRunning=true;
+    var items=$('tr.testItem');
+    testItem(items.eq(0));
+//    for(i=0;i<items.length;i++){
+//        testItem(items.eq(i));
+//
+//        //break;
+//    }
+}
+function nextItem(trItem){
+    if(isRunning==false){
+        alert('停止成功');
+        return;
+
+    }
+//    if(i>80){
+//        return;
+//    }
+//    i++;
+    trItem=trItem.next('.testItem');
+    if(trItem.children('td').length==0){
+        return;
+    }
+    //console.log(trItem);
+    testItem(trItem);
+
+}
+i=0;
+function testItem(trItem){
+    params='';
+    formmethod=trItem.attr('formmethod');
+    params=trItem.children('td.tdparams').eq(0).text();
+    testresult=trItem.children('td.tdtestresult').eq(0).text();
+    className=trItem.attr('classname').replace("Action",'');
+    actionName=trItem.attr('actionname');
+    //alert(actionName);
+    paramsUrl="m="+className+"&a="+actionName;
+   // alert(params);
+//    decodeURIComponent()
+    $.ajax({
+        type: formmethod,
+        url: "interface.php?"+paramsUrl ,
+        data: params ,
+        async : true,
+        success: function(resp){
+            //alert('22');
+            respStr=JSON.stringify(resp);
+//            console.log(JSON.stringify(resp));
+           // alert("|"+testresult+"|");
+            testresult=testresult.replace('\n','');
+            testresult=testresult.replace('\r','');
+            includeFlag=respStr.indexOf(testresult);
+//            alert(respStr.indexOf(testresult));
+            console.log(respStr);
+            console.log(testresult);
+//            console.log((includeFlag==-1));
+            if(includeFlag==-1){
+                trItem.children('td.tdstatus').eq(0).html('<div class="tderror">error-nofind</div>');
+
+            }else{
+                //alert(1111);
+                trItem.children('td.tdstatus').eq(0).html('<div class="tdsuccess">success</div>');
+            }
+            trItem.children('td.tdResult').eq(0).html("<div>"+respStr+"</div>");
+            trItem.children('td.tdmethod').eq(0).html(formmethod);
+
+            nextItem(trItem)
+        } ,
+        error:function(resp){
+            trItem.children('td.tdstatus').eq(0).html("<div class='tderror'>error500</div>");
+            trItem.children('td.tdResult').eq(0).html("<div>"+resp.responseText+"</div>");
+//            alert(resp);
+            console.log(resp);
+            nextItem(trItem)
+        },
+
+        dataType: 'json'
+
+    });
+//    if(formmethod=='')
+}
+    var isRunning=false;
+function stopAll(){
+    isRunning=false;
+
+}
+</script>
+</body>
+</html>

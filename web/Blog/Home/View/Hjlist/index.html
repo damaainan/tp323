@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/page.css">
+</head>
+<body>
+<table>
+	
+	<volist name="result" id="vo">
+<tr>
+	<td><a href="{:U('Hjlist/showPage')}?id={$vo.id}" target="_blank">{$vo.id}</a></td>
+	<!-- <td>{$vo.list}</td> -->
+	<td>{$vo.qihao}</td>
+	<td><a href="http://{$vo.list}" target="_blank">{$vo.name}</a></td>
+	<!-- <td><a href="{:U()}" target="_blank">查看详情</a></td> -->
+</tr>
+	</volist>
+</table>
+
+{$page}
+
+</body>
+</html>

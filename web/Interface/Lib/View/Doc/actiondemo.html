@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://dongman.ifenghui.com/Public/js/jquery.js"></script>
+    <script>
+
+
+        $(document).ready(function(){
+            //alert(2);
+            $('input#submit').click(function(){
+                //alert(1);
+                formobj=$('#form');
+                tokenvalue=$('#token').val();
+                $.ajax({
+                    cache: true,
+                    type: formobj.attr('method'),
+                    url:formobj.attr('action'),
+                    beforeSend: function(xhr){xhr.setRequestHeader('fhToken', tokenvalue);},//这里设置header
+                    data:formobj.serialize(),// 你的formid
+                    async: false,
+                    error: function(request) {
+                        alert("Connection error");
+                    },
+                    success: function(data,status,xhr) {
+//                        alert(xhr.getRequestHeader());
+                        $("#requestParamOutput").html(tokenvalue);
+                        $("#paramOutput").html(formobj.serialize());
+                        $("#displayOutput").html(data);
+                    }
+                });
+                return false;
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+{$demoform->getDocComment()}
+<table>
+	<tr><td>action:</td><td>interface.php?m={$controllerName}&a={$actionName}</td></tr>
+	</table>
+<form id="form" action="interface.php?m={$controllerName}&a={$actionName}" method="{$demoform->getFormMethod()}" enctype="{$demoform->getEnctype()}">
+
+    <input type="hidden" name="m" value="{$controllerName}">
+    <input type="hidden" name="a" value="{$actionName}">
+    系统:
+    <table border="1">
+        <tr><th>名称</th><th>input</th><th>描述</th></tr>
+        <tr><th>token</th><th><input id="token" /></th><th>用户凭证</th></tr>
+    </table>
+    接口:
+    <table border="1">
+        <tr><th>名称</th><th>input</th><th>描述</th></tr>
+        <volist name="inputs" id="vo" key="k">
+            <tr>
+                <td>
+
+                    {$vo->getName()}
+
+                </td>
+
+                <td>
+                    <eq name="vo:type" value="string">
+                        <input type="text" name="{$vo->getName()}">
+                    </eq>
+                    <eq name="vo:type" value="file">
+                        <input type="file" name="{$vo->getName()}">
+                    </eq>
+
+
+                </td>
+
+<td>
+                   {$vo->getDoc()}
+
+                </td>
+
+            </tr>
+
+
+
+        </volist>
+        <tr>
+            <td>
+
+            </td>
+
+            <td>
+                <input value="提交" id="submit" type="button">
+
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+    </table>
+</form>
+<h3>token:</h3>
+<div id="requestParamOutput"></div>
+
+<h3>请求消息参数:</h3>
+<div id="paramOutput"></div>
+
+<h3>返回消息:</h3>
+<div id="displayOutput"></div>
+</body>
+</html>
