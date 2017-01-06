@@ -25,7 +25,7 @@ define('BIND_MODULE','Lib');
 // define('BUILD_CONTROLLER_LIST','Index');
 // define('BUILD_MODEL_LIST','User');
 // 定义运行时目录
-define('RUNTIME_PATH','./Runtime/');
+define('RUNTIME_PATH','./Interface/Runtime/');
 
 // 引入ThinkPHP入口文件
 require './Think/ThinkPHP.php';
