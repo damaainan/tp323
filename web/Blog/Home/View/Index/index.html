@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>首页</title>
-</head>
-<body>
-<!-- <table> -->
-	
-<!-- 	<volist name="result" id="vo">
-<tr>
-	<td>{$vo.id}</td>
-	<td>{$vo.list}</td>
-	<td>{$vo.qihao}</td>
-	<td>{$vo.name}</td>
-</tr>
-	</volist> -->
-<!-- </table> -->
+<extend name="Include:base"/>
+<block name="title">首页</block>
+<block name="content">
+	<ul class="list-group" >
+		<li><a href="{:U('Hjlist/index')}">沪江社刊管理</a></li>
+		<li><a href="{:U('Game/index')}">小游戏</a></li>
+		<li><a href="{:U('Game/baidu')}">百度地图</a></li>
+	</ul>
 
-<!-- {$page} -->
-<a href="{:U('Hjlist/index')}">沪江社刊管理</a>
-<a href="{:U('Game/index')}">小游戏</a>
-<a href="{:U('Game/baidu')}">百度地图</a>
-</body>
-</html>
+
+</block>

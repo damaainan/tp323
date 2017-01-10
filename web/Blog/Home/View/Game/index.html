@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>小游戏展示</title>
-</head>
-<body>
-	<a href="{:U('Game/snake')}">贪吃蛇</a>
-	<a href="{:U('Game/tree')}">树</a>
-	<a href="{:U('Game/cookiechangetab')}">cookie控制Tab切换</a>
-</body>
-</html>
+<extend name="Include:base"/>
+<block name="title">小游戏展示</block>
+<block name="content">
+	<ul class="list-group">
+		<li><a href="{:U('Game/snake')}">贪吃蛇</a></li>
+		<li><a href="{:U('Game/tree')}">树</a></li>
+		<li><a href="{:U('Game/cookiechangetab')}">cookie控制Tab切换</a></li>
+	</ul>
+</block>

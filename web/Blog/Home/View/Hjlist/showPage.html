@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>页面展示</title>
-</head>
-<body>
+<extend name="Include:base"/>
+<block name="title">页面展示</block>
+<block name="content">
+
 	期号：<a href="http://{$result.list}" target="_blank">{$result.qihao}</a>
 	名称：<a href="http://{$result.list}" target="_blank">{$result.name}</a>
 	所属社刊：{$result.book}
-</body>
-</html>
+</block>

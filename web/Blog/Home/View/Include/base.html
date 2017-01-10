@@ -1,13 +1,13 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>首页</title>
-	<link rel="stylesheet" type="text/css" href="/git/tp323/web/Public/css/main.css">
-	
-	<link rel="stylesheet" type="text/css" href="/git/tp323/web/Public/bootstrap/css/bootstrap.min.css">
-	<script src="/git/tp323/web/Public/bootstrap/js/bootstrap.min.js"></script>
-	
+	<title><block name="title">标题</block></title>
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Public/css/main.css">
+	<block name="script">
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Public/bootstrap/css/bootstrap.min.css">
+	<script src="__ROOT__/Public/bootstrap/js/bootstrap.min.js"></script>
+	</block>
 </head>
 <body>
 <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> -->
@@ -32,15 +32,7 @@
     </nav> -->
 
 <div class="container">
-	
-	<ul class="list-group" >
-		<li><a href="<?php echo U('Hjlist/index');?>">沪江社刊管理</a></li>
-		<li><a href="<?php echo U('Game/index');?>">小游戏</a></li>
-		<li><a href="<?php echo U('Game/baidu');?>">百度地图</a></li>
-	</ul>
-
-
-
+	<block name="content"></block>
 </div>
 </body>
 </html>
