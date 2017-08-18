@@ -19,6 +19,7 @@ class ActItemModel{
         $this->method=$method;
         $this->name=$method->getName();
         $this->docComment=$method->getDocComment();
+        // $this->docCommentHtml=$this->getDocCommentHtml();
     }
 
     function getName(){
@@ -30,7 +31,7 @@ class ActItemModel{
     }
 
     function getDocCommentHtml(){
-        return str_replace("\n","<br/>",$this->docComment);
+        return str_replace("\r\n","<br/>",$this->docComment);
 
     }
 

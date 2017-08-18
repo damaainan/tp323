@@ -19,6 +19,7 @@ define('APP_DEBUG',True);
 // 定义应用目录
 define('APP_PATH','./Interface/');
 
+
 // define('MULTI_MODULE'  ,false);
 
 define('BIND_MODULE','Lib');

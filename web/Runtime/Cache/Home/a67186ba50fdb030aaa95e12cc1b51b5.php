@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>首页</title>
-	<link rel="stylesheet" type="text/css" href="/git/tp323/web/Public/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/tp323/web/Public/css/main.css">
 	
-	<link rel="stylesheet" type="text/css" href="/git/tp323/web/Public/bootstrap/css/bootstrap.min.css">
-	<script src="/git/tp323/web/Public/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/tp323/web/Public/bootstrap/css/bootstrap.min.css">
+	<script src="/tp323/web/Public/bootstrap/js/bootstrap.min.js"></script>
 	
 </head>
 <body>

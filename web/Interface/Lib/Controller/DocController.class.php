@@ -28,18 +28,23 @@ class DocController extends Controller {
 	/**
 	 * method 列表
 	 */
-	public function methodList(){
+	public function methodList(){  // interface.php/Doc/methodList.html
 		// $controllerName=$_GET['controller'];//控制器名称
 		$controllerName="Lib\Controller\IndexController";//控制器名称
 
         $class = new \ReflectionClass($controllerName); //反射类
         $methods=$class->getMethods();
+        // var_dump($methods);
         $metitems=array();
         foreach ($methods as &$method){
             if(strpos($method->getDocComment(),"@doc")!==false){
+            // var_dump($method);
+                // echo $method->getDocComment(),"&&&&&&&&&&&&&<br/>";
                 array_push($metitems,new ActItemModel($method));
+                // var_dump(new ActItemModel($method));
             }
         }
+        // var_dump($metitems);
         echo json_encode($metitems);
 	}
 
